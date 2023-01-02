@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Projects</title>
+</head>
+<body bgcolor="lighblue">
+    
+<h1>Hello {{titles}}</h1>
+
+<a href="{{link}}">Home</a>
+
+{% if user.is_uthenticated %}
+
+<li><a href="app4/logout">Logout</a></li>
+
+{% else %}
+
+<a href="app2/signup">SignUP</a>
+
+<a href="app3/login">Login</a>
+
+{% endif %}
+
+<form action="expression", method="post">
+{% csrf_token %} 
+
+
+First Input: <input type="text", name="username">
+Second Input: <input type="text", name="password">
+
+<input type="submit">
+
+
+</form>
+
+</body>
+</html>
